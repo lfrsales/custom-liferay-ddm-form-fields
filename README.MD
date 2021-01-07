@@ -2,6 +2,8 @@
 
 An example of a custom form field for Liferay 7.3 built using React.
 
+![example](/images/example.gif)
+
 ## Steps to Deploy
 
 If you don't already have blade installed, you can find steps for that [here](https://help.liferay.com/hc/en-us/articles/360028833852-Installing-Blade-CLI).

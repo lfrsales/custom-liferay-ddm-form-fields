@@ -2,6 +2,7 @@ package com.liferay.dynamic.data.mapping.form.field.type.internal.character.limi
 
 import com.liferay.dynamic.data.mapping.form.field.type.BaseDDMFormFieldType;
 import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldType;
+import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldTypeSettings;
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 
 import org.osgi.service.component.annotations.Component;
@@ -33,6 +34,13 @@ public class CharacterLimitedTextDDMFormFieldType extends BaseDDMFormFieldType {
 	@Override
 	public String getName() {
 		return "characterLimitedText";
+	}
+	
+	@Override
+	public Class<? extends DDMFormFieldTypeSettings>
+		getDDMFormFieldTypeSettings() {
+
+		return CharacterLimitedTextDDMFormFieldTypeSettings.class;
 	}
 
 	@Override

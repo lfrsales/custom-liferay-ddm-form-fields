@@ -3,16 +3,32 @@ import {FieldBase} from 'dynamic-data-mapping-form-field-type/FieldBase/ReactFie
 import {useSyncValue} from 'dynamic-data-mapping-form-field-type/hooks/useSyncValue.es';
 
 
-const CharacterLimitedText = ({name, onChange, predefinedValue, readOnly, value}) =>
-		<input
-			className="ddm-field-character-limited-text form-control character-limited-text"
+const CharacterLimitedInputDDMFormFieldType = ({name, onChange, predefinedValue, readOnly, value}) =>
+		<textarea
+			className="ddm-field-character-limited-text-input form-control character-limited-text-input"
 			disabled={readOnly}
 			name={name}
 			onInput={onChange}
 			type="text"
 			value={value ? value : predefinedValue}/>
 
-const Main = ({label, name, onChange, predefinedValue, readOnly, value, ...otherProps}) =>{
+const Main = props => {
+	const {
+		characterLimit,
+		label,
+		name,
+		onChange,
+		predefinedValue = '',
+		readOnly,
+		value,
+		...otherProps
+	} = props;
+
+	console.log('characterLimit', characterLimit);
+
+	const characterLimitInt = characterLimit ? parseInt(characterLimit) : 0;
+
+	console.log('otherProps', otherProps);
 
 	const [currentValue, setCurrentValue] = useSyncValue(
 		value ? value : predefinedValue
@@ -24,21 +40,27 @@ const Main = ({label, name, onChange, predefinedValue, readOnly, value, ...other
 			predefinedValue={predefinedValue}
 			{...otherProps}
 		>
-			<CharacterLimitedText
-				name={name}
-				onChange={(event) => {
-					setCurrentValue(event.target.value);
-					onChange(event);
-				}}
-				predefinedValue={predefinedValue}
-				readOnly={readOnly}
-				value={currentValue}
-			/>
+			<div className="form-group">
+				<CharacterLimitedInputDDMFormFieldType
+					name={name}
+					onChange={(event) => {
+						if (event.target.value.length <= characterLimitInt) {
+							setCurrentValue(event.target.value);
+							onChange(event);
+						}
+					}}
+					predefinedValue={predefinedValue}
+					readOnly={readOnly}
+					value={currentValue}
+				/>
+
+				<span aria-hidden="true" className="form-text text-right">
+					<span>{currentValue.length}</span> / <span>{characterLimitInt}</span>
+				</span>
+			</div>
 		</FieldBase>
 }
 
-Main.displayName = 'CharacterLimitedText';
+Main.displayName = 'CharacterLimitedInputDDMFormFieldType';
 
 export default Main;
-
-

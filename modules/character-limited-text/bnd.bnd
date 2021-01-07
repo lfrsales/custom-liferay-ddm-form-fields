@@ -1,0 +1,4 @@
+Bundle-Name: character-limited-text
+Bundle-SymbolicName: com.liferay.dynamic.data.mapping.form.field.type.internal.character.limited.text
+Bundle-Version: 1.0.0
+Web-ContextPath: /dynamic-data-character-limited-text-form-field

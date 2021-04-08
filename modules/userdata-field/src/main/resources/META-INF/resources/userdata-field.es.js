@@ -7,7 +7,7 @@ import {ClayInput} from '@clayui/form';
  * UserData Input React Component
  */
 
-const UserDataFieldDDMFormFieldType = ({name, onChange, predefinedValue, readOnly, value}) =>
+const UserDataFieldDDMFormFieldType = ({name, onChange, predefinedValue, readOnly, value}) => (
 	<ClayInput
 		className="ddm-field-text"
 		disabled={readOnly}
@@ -16,6 +16,7 @@ const UserDataFieldDDMFormFieldType = ({name, onChange, predefinedValue, readOnl
 		type="text"
 		value={value ? value : predefinedValue}
 	/>
+);
 
 const Main = props => {
 	const {
@@ -31,12 +32,12 @@ const Main = props => {
 	const [currentValue, setCurrentValue] = useSyncValue(
 		value ? value : predefinedValue
 	);
-	
+
 	useEffect(() => {
 		setCurrentValue(predefinedValue);
 		onChange({target: {value: predefinedValue}});
 	}, []);
-	
+
 	return <FieldBase
 			label={label}
 			name={name}
@@ -45,10 +46,10 @@ const Main = props => {
 		>
 			<UserDataFieldDDMFormFieldType
 				name={name}
-	            onChange={(event) => {
-	                setCurrentValue(event.target.value);
-	                onChange(event);
-	            }}
+				onChange={(event) => {
+					setCurrentValue(event.target.value);
+					onChange(event);
+				}}
 				readOnly={readOnly}
 				predefinedValue={predefinedValue}
 				value={currentValue}

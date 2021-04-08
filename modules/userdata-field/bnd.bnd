@@ -1,0 +1,4 @@
+Bundle-Name: userdata-field
+Bundle-SymbolicName: com.liferay.dynamic.data.mapping.form.field.type.internal.userdata.field
+Bundle-Version: 1.0.0
+Web-ContextPath: /dynamic-data-userdata-field-form-field

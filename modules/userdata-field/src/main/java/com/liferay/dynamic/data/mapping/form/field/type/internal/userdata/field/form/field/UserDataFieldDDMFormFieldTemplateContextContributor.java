@@ -138,7 +138,7 @@ public class UserDataFieldDDMFormFieldTemplateContextContributor
 
 				predefinedValue = "";
 
-				if (userPhones.isEmpty()) {
+				if (!userPhones.isEmpty()) {
 					Phone firstUserPhone = userPhones.get(0);
 
 					predefinedValue = firstUserPhone.getNumber();

@@ -62,16 +62,17 @@ public class UserDataFieldDDMFormFieldTemplateContextContributor
 
 		Map<String, Object> parameters = new HashMap<>();
 
+		parameters.put(
+			"userDataField", (String)ddmFormField.getProperty("userDataField"));
+
 		String predefinedValue = null;
 
-		if (ddmFormFieldRenderingContext.isReturnFullContext()) {
-			try {
-				predefinedValue = getPredefinedValue(
-					ddmFormField, ddmFormFieldRenderingContext);
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			predefinedValue = getPredefinedValue(
+				ddmFormField, ddmFormFieldRenderingContext);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		parameters.put("predefinedValue", predefinedValue);

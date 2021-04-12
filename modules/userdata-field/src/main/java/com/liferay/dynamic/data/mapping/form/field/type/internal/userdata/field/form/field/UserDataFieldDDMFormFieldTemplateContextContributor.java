@@ -26,6 +26,8 @@ import com.liferay.portal.kernel.model.Phone;
 import com.liferay.portal.kernel.model.Region;
 import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
+import com.liferay.portal.kernel.util.HtmlUtil;
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
 
 import java.lang.reflect.Method;
@@ -76,6 +78,15 @@ public class UserDataFieldDDMFormFieldTemplateContextContributor
 		}
 
 		parameters.put("predefinedValue", predefinedValue);
+
+		String value = getValue(ddmFormFieldRenderingContext);
+
+		if (Validator.isNotNull(value)) {
+			parameters.put("value", value);
+		}
+		else {
+			parameters.put("value", predefinedValue);
+		}
 
 		return parameters;
 	}
@@ -213,6 +224,19 @@ public class UserDataFieldDDMFormFieldTemplateContextContributor
 		}
 
 		return predefinedValue;
+	}
+
+	protected String getValue(
+		DDMFormFieldRenderingContext ddmFormFieldRenderingContext) {
+
+		String value = String.valueOf(
+			ddmFormFieldRenderingContext.getProperty("value"));
+
+		if (ddmFormFieldRenderingContext.isViewMode()) {
+			value = HtmlUtil.extractText(value);
+		}
+
+		return value;
 	}
 
 	private static final Log _log = LogFactoryUtil.getLog(

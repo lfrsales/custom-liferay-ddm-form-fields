@@ -30,7 +30,8 @@ import org.osgi.service.component.annotations.Reference;
 	property = {
 		"ddm.form.field.type.description=userdata-field-description",
 		"ddm.form.field.type.display.order:Integer=13",
-		"ddm.form.field.type.group=customized", "ddm.form.field.type.icon=user",
+		"ddm.form.field.type.group=customized", 
+		"ddm.form.field.type.icon=user",
 		"ddm.form.field.type.label=userdata-field-label",
 		"ddm.form.field.type.name=userdataField"
 	},

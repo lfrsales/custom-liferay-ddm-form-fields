@@ -15,7 +15,7 @@ Custom form fields for Liferay 7.3 built using React.
 If you don't already have blade installed, you can find steps for that [here](https://help.liferay.com/hc/en-us/articles/360028833852-Installing-Blade-CLI).
 
 1. Update the `liferay.workspace.home.dir=/path/to/liferay/home` property to point towards your liferay home directory.
-2. From the root directory run `blade gw depoy`.
+2. From the root directory run `blade gw deploy`.
 
 ## Steps to Create
 

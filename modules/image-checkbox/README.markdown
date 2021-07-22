@@ -7,39 +7,28 @@
 
 # About The Module
 
-This module provides a custom form field that uses data from logged user to use it as a predefined value, so that the field will automatically autofillled but the user will can change the data if they want. This field only will fill out the data if the user is logged in.
-
-![See in page][page-img]
-
-The User-data-field admits:
-
- * Labeling
- * Set as required
- * Add Tooltip
- * Validation
-
-![Configuration][config-img]
+This module offers an alternative to classic checkboxes by using an Image as selector.
+![See in page][module-img]
 
 ## Built With
 
 This Module has been build using the following software:
 * [REACT](https://es.reactjs.org/)
-* [Clay](https://clayui.com/)
 
 # Getting Started
 
 ## Prerequisites
 
-* This module is compatible with **Liferay 7.3**
+* This module is compatible with **Liferay 7.3**. The lastest tested version has been 7.3.10-sp1.
 
 ## Build it
 ` $ ./gradlew build `
-The jar file will be in `build/libs/com.liferay.dynamic.data.mapping.form.field.type.internal.userdata.field-{version}.jar`.
+The jar file will be in `build/libs/com.liferay.dynamic.data.mapping.form.field.type.internal.image.checkbox-{version}.jar`.
 
 These are the relevant configuration properties used to build it locally:
 - **gradle.properties**:
 ```
-liferay.workspace.product = dxp-7.3-ga1
+liferay.workspace.product = dxp-7.3-sp1
 ```
 - **settings.gradle**
 ```
@@ -55,14 +44,13 @@ dependencies {
 # Usage
 
 1. Create a new form or editing a existing one.
-2. In the *Elements* tab, go to *Customized Elements* and drag the **User's Data Field** and drop it into your form.
-3. Configure, inside the *Basic* tab, the **User's Data Field** selecting the attribute that you want to map into the field.
+2. In the *Elements* tab, go to *Customized Elements* and drag the **Imgage Checkbox** and drop it into your form.
+3. Configure, inside the *Basic* tab, the **Image** selecting the image that you want show in your checkbox. Don't forget configure an alternative text `alt`.
 4. **Save your form** to see the changes.
 
 # TODO List
 
-* Add dynamic configuration of selectable user's attributes, including custom fields.
-* Add "readonly" configuration
+* Create Clay Card Checkbox
 
 **PRs, issues and comments will be welcomed**
 
@@ -79,5 +67,3 @@ dependencies {
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/-martin-dominguez/
 [module-img]: doc-images/image-checkbox.gif
-[config-img]: doc-images/user-data-field1.png
-[page-img]: doc-images/user-data-field2.png

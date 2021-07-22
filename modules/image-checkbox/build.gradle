@@ -1,0 +1,5 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+
+	jsCompile group: "com.liferay", name: "com.liferay.dynamic.data.mapping.form.field.type"
+}

@@ -1,0 +1,22 @@
+{
+	"devDependencies": {
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.6.0",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+		"@babel/preset-env": "^7.4.2",
+		"@babel/preset-react": "^7.10.4",
+		"babel-loader": "8.0.6",
+		"liferay-npm-bundler": "2.16.1",
+		"liferay-npm-bundler-loader-css-loader": "^2.13.3",
+		"liferay-npm-bundler-loader-style-loader": "^2.26.0",
+		"liferay-npm-bundler-preset-liferay-dev": "^2.0.0"
+	},
+	"main": "./",
+	"name": "dynamic-data-image-checkbox-form-field",
+	"scripts": {
+		"build": "npm run build-js && liferay-npm-bundler",
+		"build-js": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources"
+	},
+	"version": "1.0.0"
+}

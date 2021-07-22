@@ -35,3 +35,23 @@ character-limited-text
 At this point the field is ready to deploy.
 
 To add custom settings for fields you will need to add additional files. This can be seen in the commit `Add logic for character limited text field`.
+
+## Contributing Guidelines
+
+Pull requests welcome.
+
+### Releasing
+
+Releases are handled using Github actions.
+
+To release a new version do the following:
+
+1. Create a git tag.
+
+	1. `git tag v0.0.1`
+
+1. Push the tag to Github.
+
+	1. `git push origin v0.0.1`
+
+The Github action will be triggered and will attach all assets to the release.

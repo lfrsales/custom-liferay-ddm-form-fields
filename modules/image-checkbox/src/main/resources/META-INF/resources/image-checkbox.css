@@ -1,0 +1,52 @@
+.ddm-image-checkbox  input[type="checkbox"] {
+    display: none;
+}
+  
+label.ddm-image-checkbox {
+    border: 1px solid #fff;
+    position: relative;
+    margin: 0px;
+    cursor: pointer;
+}
+  
+label.ddm-image-checkbox:before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+  
+label.ddm-image-checkbox img {
+    width: 100%;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+}
+  
+.ddm-image-checkbox.checked {
+    border-color: #ddd;
+    padding: 10px;
+}
+  
+.ddm-image-checkbox.checked:before {
+    content: "✓";
+    background-color: var(--success);
+    transform: scale(1);
+    z-index: 5;
+}
+  
+.ddm-image-checkbox.checked img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
+}

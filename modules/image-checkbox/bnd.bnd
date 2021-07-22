@@ -1,0 +1,4 @@
+Bundle-Name: LFRSales Image Checkbox Form Field Type
+Bundle-SymbolicName: com.liferay.dynamic.data.mapping.form.field.type.internal.image.checkbox
+Bundle-Version: 1.0.0
+Web-ContextPath: /dynamic-data-image-checkbox-form-field

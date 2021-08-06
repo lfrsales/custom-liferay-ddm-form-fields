@@ -6,6 +6,8 @@ Custom form fields for Liferay 7.3 built using React.
 
 [Userdata Field](/modules/userdata-field/README.markdown)
 
+[Image Checkbox](/modules/image-checkbox/README.markdown)
+
 [Character Limited Text Input](/modules/character-limited-text)
 
 ![example](/images/example.gif)

@@ -1,5 +1,6 @@
 {
-	"dependencies": {},
+	"dependencies": {
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.2.3",
 		"@babel/core": "^7.6.0",
